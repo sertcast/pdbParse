@@ -10,5 +10,13 @@
 #define take_info_h
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <string.h>
+#include <ctype.h>
+#include <stdbool.h>
 
+int takeNumOfAtom(char *fileName);
+int takeNumOfResidue(char *fileName);
+int takeNumOfChain(char *fileName);
 #endif /* take_info_h */

@@ -7,9 +7,10 @@
 //
 
 #include <stdio.h>
+#include "read_file.h"
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
+int main() {
+    struct protein *P = NULL;
+    readFile("/Users/mkaya/Desktop/PDB_read/PDB_read/2CI2.pdb", P);
     return 0;
 }
