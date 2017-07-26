@@ -18,7 +18,7 @@ int takeNumOfAtom(char *fileName){
         exit(1);
     }
     while(!feof(file)){
-        fgets(line, 81, file);
+        fgets(line, 82, file);
         if(strncmp(line,"ATOM  ",6) == 0){
             counter++;
         }

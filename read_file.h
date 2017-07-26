@@ -45,6 +45,9 @@ struct protein{
     int size_residue;
     int size_chain;
 };
+
 int checkCommand(int x, char **y);
-void readFile(char *fileName, struct protein *P);
+struct protein *readFile(char *fileName);
+void *freeProtein(struct protein *P);
+
 #endif /* readFile_h */

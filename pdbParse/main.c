@@ -8,9 +8,13 @@
 
 #include <stdio.h>
 #include "read_file.h"
+#include "get_info.h"
+
+
 
 int main() {
     struct protein *P = NULL;
-    readFile("/Users/mkaya/Desktop/PDB_read/PDB_read/2CI2.pdb", P);
+    P = readFile("/Users/mkaya/Desktop/PDB_read/PDB_read/2CI2.pdb");
+    P = freeProtein(P);
     return 0;
 }

@@ -24,6 +24,7 @@ void readAtomData(char *fileName, struct protein *P){
             P->atoms[countAtom].coor[0] = getDouble(line, 31, 38);
             P->atoms[countAtom].coor[1] = getDouble(line, 39, 46);
             P->atoms[countAtom].coor[2] = getDouble(line, 47, 54);
+            countAtom++;
         }
     }
     free(getstring);
@@ -97,8 +98,29 @@ void readChainData(char *fileName, struct protein *P){
     }
     fclose(file);
 }
-
-void readFile(char *fileName, struct protein *P){
+void readProteinData(char *fileName, struct protein *P){
+    char line[82];
+    int countChain = 0;
+    char prevChn = 'a';
+    FILE * file = fopen(fileName, "r");
+    while (!feof(file)) {
+        fgets(line, 82, file);
+        if(strncmp(line , "ATOM  ", 6) == 0){
+            if(prevChn != getChar(line, 22)){
+                P->chains[countChain].prtn = P;
+                countChain++;
+                prevChn = getChar(line, 22);
+            }
+        }
+    }
+    P->size_atom = takeNumOfAtom(fileName);
+    P->size_residue = takeNumOfResidue(fileName);
+    P->size_chain= takeNumOfChain(fileName);
+    P->name = fileName;
+    fclose(file);
+}
+struct protein *readFile(char *fileName){
+    struct protein *P;
     int numOfAtoms =takeNumOfAtom(fileName);
     int numOfResidues =takeNumOfResidue(fileName);
     int numOfChains =takeNumOfChain(fileName);
@@ -111,10 +133,17 @@ void readFile(char *fileName, struct protein *P){
     readAtomData(fileName, P);
     readResidueData(fileName, P);
     readChainData(fileName, P);
+    readProteinData(fileName, P);
     
-    P->size_atom = takeNumOfAtom(fileName);
-    P->size_residue = takeNumOfResidue(fileName);
-    P->size_chain= takeNumOfChain(fileName);
-    P->name = fileName;
-    
+    return P;
 };
+void *freeProtein(struct protein *P){
+    free(P->atoms);
+    free(P->residues);
+    free(P->chains);
+    free(P);
+    return P;
+}
+
+
+
