@@ -48,6 +48,6 @@ struct protein{
 
 int checkCommand(int x, char **y);
 struct protein *readFile(char *fileName);
-void *freeProtein(struct protein *P);
+void freeProtein(struct protein *P);
 
 #endif /* readFile_h */

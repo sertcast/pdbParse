@@ -137,12 +137,11 @@ struct protein *readFile(char *fileName){
     
     return P;
 };
-void *freeProtein(struct protein *P){
+void freeProtein(struct protein *P){
     free(P->atoms);
     free(P->residues);
     free(P->chains);
     free(P);
-    return P;
 }
 
 
