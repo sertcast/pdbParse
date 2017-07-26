@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4180E6041F28CF6200E47365 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 4180E6031F28CF6200E47365 /* main.c */; };
+		4180E60C1F28CF8A00E47365 /* stringFuncs.c in Sources */ = {isa = PBXBuildFile; fileRef = 4180E60A1F28CF8A00E47365 /* stringFuncs.c */; };
+		4180E60F1F28CFB800E47365 /* take_info.c in Sources */ = {isa = PBXBuildFile; fileRef = 4180E60D1F28CFB800E47365 /* take_info.c */; };
+		4180E6121F28CFCA00E47365 /* read_file.c in Sources */ = {isa = PBXBuildFile; fileRef = 4180E6101F28CFCA00E47365 /* read_file.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,12 @@
 /* Begin PBXFileReference section */
 		4180E6001F28CF6200E47365 /* pdbParse */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = pdbParse; sourceTree = BUILT_PRODUCTS_DIR; };
 		4180E6031F28CF6200E47365 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		4180E60A1F28CF8A00E47365 /* stringFuncs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = stringFuncs.c; path = ../stringFuncs.c; sourceTree = "<group>"; };
+		4180E60B1F28CF8A00E47365 /* stringFuncs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stringFuncs.h; path = ../stringFuncs.h; sourceTree = "<group>"; };
+		4180E60D1F28CFB800E47365 /* take_info.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = take_info.c; path = ../take_info.c; sourceTree = "<group>"; };
+		4180E60E1F28CFB800E47365 /* take_info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = take_info.h; path = ../take_info.h; sourceTree = "<group>"; };
+		4180E6101F28CFCA00E47365 /* read_file.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = read_file.c; sourceTree = "<group>"; };
+		4180E6111F28CFCA00E47365 /* read_file.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = read_file.h; path = ../read_file.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +50,7 @@
 		4180E5F71F28CF6200E47365 = {
 			isa = PBXGroup;
 			children = (
+				4180E6101F28CFCA00E47365 /* read_file.c */,
 				4180E6021F28CF6200E47365 /* pdbParse */,
 				4180E6011F28CF6200E47365 /* Products */,
 			);
@@ -58,6 +68,11 @@
 			isa = PBXGroup;
 			children = (
 				4180E6031F28CF6200E47365 /* main.c */,
+				4180E6111F28CFCA00E47365 /* read_file.h */,
+				4180E60D1F28CFB800E47365 /* take_info.c */,
+				4180E60E1F28CFB800E47365 /* take_info.h */,
+				4180E60A1F28CF8A00E47365 /* stringFuncs.c */,
+				4180E60B1F28CF8A00E47365 /* stringFuncs.h */,
 			);
 			path = pdbParse;
 			sourceTree = "<group>";
@@ -119,7 +134,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4180E60C1F28CF8A00E47365 /* stringFuncs.c in Sources */,
+				4180E60F1F28CFB800E47365 /* take_info.c in Sources */,
 				4180E6041F28CF6200E47365 /* main.c in Sources */,
+				4180E6121F28CFCA00E47365 /* read_file.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
