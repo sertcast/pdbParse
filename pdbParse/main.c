@@ -15,6 +15,8 @@
 int main() {
     struct protein *P = NULL;
     P = readFile("/Users/mkaya/Desktop/PDB_read/PDB_read/2CI2.pdb");
-    P = freeProtein(P);
+    //printf("%lf\t%lf\t%lf\n", P->residues[83].atoms->coor[0], P->residues[83].atoms->coor[1], P->residues[83].atoms->coor[2]);
+    contacts(P, 5.0, 4);
+    freeProtein(P);
     return 0;
 }

@@ -64,6 +64,7 @@ void readResidueData(char *fileName, struct protein *P){
         }
     }
     free(getstring);
+    P->residues[countResidue].size_atom = atom_size;
     fclose(file);
 }
 void readChainData(char *fileName, struct protein *P){
@@ -96,6 +97,7 @@ void readChainData(char *fileName, struct protein *P){
             }
         }
     }
+    P->chains[countChain].size_residue = residue_size;
     fclose(file);
 }
 void readProteinData(char *fileName, struct protein *P){
