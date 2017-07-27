@@ -94,11 +94,10 @@ double distanceBetweenCA(struct residue *A,struct residue *B){
 }
 void contacts(struct protein *P, double maxDist, int criteria){
     int a,b;
-    printf("first\tsecond\tmin distance\tCA distance\n----------------------------------------------\n");
     for(a = 0; a < P->size_residue-criteria; a++){
         for(b = a + criteria; b < P->size_residue; b++){
             if(distanceBtwResidue(&P->residues[a], &P->residues[b])<=maxDist){
-            printf("%d\t\t%d\t\t%.5lf\t\t%.5lf\n",P->residues[a].ID,P->residues[b].ID,distanceBtwResidue(&P->residues[a], &P->residues[b]),distanceBetweenCA(&P->residues[a], &P->residues[b]));
+            printf("%d(%c)\t\t%d(%c)\t\t%.5lf\t\t%.5lf\n",P->residues[a].ID,P->residues[a].chn->ID,P->residues[b].ID,P->residues[b].chn->ID,distanceBtwResidue(&P->residues[a], &P->residues[b]),distanceBetweenCA(&P->residues[a], &P->residues[b]));
             }
         }
     }

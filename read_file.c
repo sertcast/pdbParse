@@ -94,6 +94,7 @@ void readChainData(char *fileName, struct protein *P){
                 P->residues[countResidue].chn = &P->chains[countChain];
                 residue_size++;
                 countResidue++;
+                prevResd = getInt(line, 23, 26);
             }
         }
     }
