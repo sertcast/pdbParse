@@ -18,4 +18,5 @@ double distanceBetweenCoor(double *firstCoor, double *secondCoor);
 double distanceBtwAtom (struct atom *A, struct atom *B);
 double distanceBtwResidue(struct residue *A, struct residue *B);
 void contacts(struct protein *P, double maxDist, int criteria);
+void contactsChain(struct chain *C, double maxDist, int criteria);
 #endif /* get_info_h */

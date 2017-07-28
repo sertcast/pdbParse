@@ -93,13 +93,33 @@ double distanceBetweenCA(struct residue *A,struct residue *B){
     return 0.0;
 }
 void contacts(struct protein *P, double maxDist, int criteria){
-    int a,b;
+    int a,b,x = 0;
     for(a = 0; a < P->size_residue-criteria; a++){
         for(b = a + criteria; b < P->size_residue; b++){
             if(distanceBtwResidue(&P->residues[a], &P->residues[b])<=maxDist){
-            printf("%d(%c)\t\t%d(%c)\t\t%.5lf\t\t%.5lf\n",P->residues[a].ID,P->residues[a].chn->ID,P->residues[b].ID,P->residues[b].chn->ID,distanceBtwResidue(&P->residues[a], &P->residues[b]),distanceBetweenCA(&P->residues[a], &P->residues[b]));
+            printf("%d(%c)\t\t%d(%c)\t\t%.5lf\t\t%.5lf\n",P->residues[a].ID,P->residues[a].chn->ID,P->residues[b].ID,P->residues[b].chn->ID,distanceBtwResidue(&P->residues[a] , &P->residues[b]),distanceBetweenCA(&P->residues[a], &P->residues[b]));
+                x++;
             }
         }
     }
+    printf("There is %d residue who interacts\n",x);
 }
+
+void contactsChain(struct chain *C, double maxDist, int criteria){
+    int a,b,x = 0;
+    struct residue *resA, *resB;
+    for(a = 0; a < C->size_residue-criteria; a++){
+        resA = C->residues + a;
+        for(b = a + criteria; b < C->size_residue; b++){
+            resB = C->residues + b;
+            if(distanceBtwResidue(resA, resB)<=maxDist){
+                printf("%d(%c)\t\t%d(%c)\t\t%.5lf\t\t%.5lf\n",resA->ID,resA->chn->ID,resB->ID,resB->chn->ID,distanceBtwResidue(resA , resB),distanceBetweenCA(resA, resB));
+                x++;
+            }
+        }
+    }
+    printf("There is %d residue who interacts\n",x);
+}
+
+
 

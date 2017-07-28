@@ -16,6 +16,7 @@ int main() {
     struct protein *P = NULL;
     P = readFile("/Users/mkaya/Desktop/PDB_read/PDB_read/1IC2.pdb");
     contacts(P, 5.0, 4);
+    contactsChain(&P->chains[0], 5.0, 4);
     freeProtein(P);
     return 0;
 }
